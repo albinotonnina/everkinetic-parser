@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/app.js"],"names":["everkineticParser","crawl"],"mappings":";;AAAA;;AAEA,IAAMA,oBAAoB,0CAA1B;;AAEAA,kBAAkBC,KAAlB","file":"app.js","sourcesContent":["import {EverkineticParser} from './EverkineticParser';\n\nconst everkineticParser = new EverkineticParser();\n\neverkineticParser.crawl();\n"]}
