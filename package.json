@@ -12,7 +12,6 @@
   "scripts": {
     "start": "node dist/app.js",
     "prestart": "babel src -s -D -d dist --presets es2015,stage-0",
-    "testold": "mocha --reporter spec --recursive --compilers js:babel-core/register",
     "test": "mocha --require babel-core/register --recursive"
   },
   "devDependencies": {
