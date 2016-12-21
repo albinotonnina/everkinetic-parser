@@ -1,4 +1,4 @@
-var fs = require('fs');
+const fs = require('fs');
 import {Fetcher} from './Fetcher';
 
 import {PageNumberExtractor} from './extractors/PageNumberExtractor';
@@ -47,13 +47,11 @@ export class EverkineticParser {
     }
 
     parsePhotos(photos) {
-        const photosExtractor = new PhotosExtractor(photos);
-        return photosExtractor.extract();
+        return new PhotosExtractor(photos).extract();
     }
 
     downloadPhotos(photos) {
-        const photosDownloader = new PhotosDownloader(photos);
-        return photosDownloader.download();
+        return new PhotosDownloader(photos).download();
     }
 
     writeOutputToJSON(output) {

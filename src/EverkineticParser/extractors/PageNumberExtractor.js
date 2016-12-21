@@ -1,5 +1,3 @@
-
-
 export class PageNumberExtractor {
     constructor(fetcher, HomeDocumentFactory) {
         this.fetcher = fetcher;

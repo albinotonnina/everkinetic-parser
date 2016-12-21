@@ -13,7 +13,7 @@ export class PageExtractor {
 
         let pagePromises = [];
         for (let i = 1; i <= this.totalPages; i++) {
-            pagePromises.push(this.fetcher.fetch(`${this.url}/page/${i}`).then(output=>{
+            pagePromises.push(this.fetcher.fetch(`${this.url}/page/${i}`).then(output => {
                 console.log(`fetch page ${i}`)
                 return output;
             }));
@@ -21,11 +21,10 @@ export class PageExtractor {
 
         return Promise.all(pagePromises)
             .then((values) => {
-
                 return values
                     .map($ => this.pageDocumentFactory.get($).extract())
                     .reduce((a, b) => a.concat(b), []);
-            });
+            })
     }
 
 }

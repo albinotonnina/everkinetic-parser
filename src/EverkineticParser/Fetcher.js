@@ -1,19 +1,19 @@
-var rp = require('request-promise');
-var cheerio = require('cheerio');
+const rp = require('request-promise');
+const cheerio = require('cheerio');
 
 export class Fetcher {
 
-    constructor() {
-        this.rpOptions = {
-            simple: true,
-            transform: function (body) {
-                return cheerio.load(body);
-            }
-        };
+    constructor(requestpromise = rp) {
+        this.request = requestpromise;
     }
 
     fetch(url) {
-        this.rpOptions.uri = url;
-        return rp(this.rpOptions);
+        return this.request({
+            uri: url,
+            simple: true
+        })
+            .then(body => {
+                return cheerio.load(body);
+            });
     }
 }

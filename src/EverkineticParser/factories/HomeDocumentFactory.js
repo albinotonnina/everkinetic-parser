@@ -10,10 +10,8 @@ export class HomeDocument {
 
 }
 
-
-
 export class HomeDocumentFactory {
-    get($){
+    get($) {
         return new HomeDocument($);
     }
 }

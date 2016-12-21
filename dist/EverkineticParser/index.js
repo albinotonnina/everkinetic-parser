@@ -77,14 +77,12 @@ var EverkineticParser = exports.EverkineticParser = function () {
     }, {
         key: 'parsePhotos',
         value: function parsePhotos(photos) {
-            var photosExtractor = new _PhotosExtractor.PhotosExtractor(photos);
-            return photosExtractor.extract();
+            return new _PhotosExtractor.PhotosExtractor(photos).extract();
         }
     }, {
         key: 'downloadPhotos',
         value: function downloadPhotos(photos) {
-            var photosDownloader = new _PhotosDownloader.PhotosDownloader(photos);
-            return photosDownloader.download();
+            return new _PhotosDownloader.PhotosDownloader(photos).download();
         }
     }, {
         key: 'writeOutputToJSON',

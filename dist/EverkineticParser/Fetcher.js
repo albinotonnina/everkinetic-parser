@@ -13,21 +13,22 @@ var cheerio = require('cheerio');
 
 var Fetcher = exports.Fetcher = function () {
     function Fetcher() {
+        var requestpromise = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : rp;
+
         _classCallCheck(this, Fetcher);
 
-        this.rpOptions = {
-            simple: true,
-            transform: function transform(body) {
-                return cheerio.load(body);
-            }
-        };
+        this.rp = requestpromise;
     }
 
     _createClass(Fetcher, [{
         key: 'fetch',
         value: function fetch(url) {
-            this.rpOptions.uri = url;
-            return rp(this.rpOptions);
+            return this.rp({
+                uri: url,
+                simple: true
+            }).then(function (body) {
+                return cheerio.load(body);
+            });
         }
     }]);
 
