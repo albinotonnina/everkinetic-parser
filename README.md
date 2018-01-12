@@ -2,6 +2,8 @@
 
 # Parser for db.everkinetic.com
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/albinotonnina/everkinetic-parser.svg)](https://greenkeeper.io/)
+
 Parses data from [http://db.everkinetic.com](http://db.everkinetic.com)
 
 ## How to install
